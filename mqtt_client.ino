@@ -24,7 +24,7 @@ const char *password = "qwertyuiop";   // Replace with your WiFi password
 // MQTT Broker settings
 const int mqtt_port = 8883;  // MQTT port (TLS)
 const char *mqtt_broker = "s3463711.ala.eu-central-1.emqxsl.com";  // EMQX broker endpoint
-const char *mqtt_topic = "cdv/trans";     // MQTT topic
+const char *mqtt_topic = "cdv/aimaster";     // MQTT topic
 const char *mqtt_username = "espchinatest";  // MQTT username for authentication
 const char *mqtt_password = "12345678%";  // MQTT password for authentication
 // NTP Server settings
