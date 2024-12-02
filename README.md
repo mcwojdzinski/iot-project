@@ -15,7 +15,7 @@
 ### Speech-to-text
 
 * [Speech-to-text-python](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/speech-to-text-python.md) - Program uzywajacy modelu do tlumaczenia mowy na tekst
-* [Speech-to-text-arduino]()
+* [Speech-to-text-arduino](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/speech-to-text-arduino.md) - Pobieranie z MQTT tekstu i wyswietlanie na ekranie LCD
 
 ### Video-to-text
 
