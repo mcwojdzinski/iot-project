@@ -1,3 +1,5 @@
+### [Powrot do dokumentacji](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/README.md)
+
 #### Opis ogólny
 
 Ten skrypt łączy się z kamerą w celu wykrywania obiektów w czasie rzeczywistym za pomocą modelu YOLOv8 (od ultralytics). Wyniki wykrywania są publikowane na serwerze MQTT w celu ich udostępnienia innym aplikacjom.
