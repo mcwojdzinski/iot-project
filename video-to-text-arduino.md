@@ -1,3 +1,5 @@
+### [Powrot do dokumentacji](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/README.md)
+
 #### Opis ogólny:
 
 Skrypt jest przeznaczony do pracy z mikrokontrolerem **ESP8266**. Wykorzystuje bibliotekę **PubSubClient** do komunikacji za pomocą protokołu MQTT oraz **WiFi** do łączenia się z siecią. Program obsługuje synchronizację czasu za pomocą **NTP**, a także wyświetlanie otrzymanych wiadomości MQTT na ekranie LCD z interfejsem **I2C**.
