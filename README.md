@@ -14,7 +14,7 @@
 
 ### Speech-to-text
 
-* [Speech-to-text-python](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/speech-to-text-arduino.md) - Program uzywajacy modelu do tlumaczenia mowy na tekst
+* [Speech-to-text-python](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/speech-to-text-python.md) - Program uzywajacy modelu do tlumaczenia mowy na tekst
 * [Speech-to-text-arduino]()
 
 ### Video-to-text
