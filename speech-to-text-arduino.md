@@ -1,3 +1,4 @@
+### [Powrot do dokumentacji](https://github.com/mcwojdzinski/mqtt-temperature/blob/main/README.md)
 
 ## Opis ogólny
 
