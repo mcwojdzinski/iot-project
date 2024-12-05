@@ -30,13 +30,13 @@ def connect_mqtt() -> mqtt_client:
 
 
 # Ładowanie modelu YOLO
-model = YOLO('yolov8m.pt')  # Możesz zmienić model na yolov8n.pt, yolov8s.pt, itp.
+model = YOLO('yolov8m.pt')
 
 def run():
-    client = connect_mqtt()
+    # client = connect_mqtt()
 
     # Inicjalizacja kamery
-    camera = cv2.VideoCapture(0)  # Kamera o indeksie 0 (domyślna)
+    camera = cv2.VideoCapture(0)
     if not camera.isOpened():
         print("Nie można otworzyć kamery.")
         return
@@ -69,9 +69,10 @@ def run():
         # Wypisz wykryte obiekty w terminalu
         print("Detected objects:", set(detected_objects))
 
-        for msg in detected_objects:
-            result = client.publish(topic, msg)
-            time.sleep(1)
+        # Wyślij wyniki przez MQTT (opcjonalne)
+        # for msg in detected_objects:
+        #     result = client.publish(topic, msg)
+        #     time.sleep(1)
 
         # Naciśnij 'q', aby zakończyć
         if cv2.waitKey(1) & 0xFF == ord('q'):
