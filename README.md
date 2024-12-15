@@ -10,8 +10,8 @@
 * [Python](https://github.com/mcwojdzinski/iot-project/blob/main/fullintegration-python.md) - Dokumentacja dla python'a
 
 #### Schematy blokowe zrobione w mermaid chart
-* [Python](https://www.mermaidchart.com/app/projects/edc22dcc-76fb-42fd-9467-d90072d1f8dc/diagrams/828bfac8-1771-4ef8-a076-39dbcde36b54/version/v0.1/edit)
-* [Arduino](https://www.mermaidchart.com/app/projects/edc22dcc-76fb-42fd-9467-d90072d1f8dc/diagrams/ddef788c-7891-4dcb-90a3-3b521e712d67/version/v0.1/edit)
+* [Python](https://www.mermaidchart.com/raw/828bfac8-1771-4ef8-a076-39dbcde36b54?theme=light&version=v0.1&format=svg)
+* [Arduino](https://www.mermaidchart.com/raw/ddef788c-7891-4dcb-90a3-3b521e712d67?theme=light&version=v0.1&format=svg)
 
 ## Dokumentacja dla poszczególnych programów:
 
