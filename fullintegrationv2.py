@@ -19,7 +19,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 SAMPLE_RATE = 48000
 CHANNELS = 1
 chunk_duration = 5
-FRAME_INTERVAL = 1
+FRAME_INTERVAL = 0.5
 
 # MQTT Configuration
 broker = 's3463711.ala.eu-central-1.emqxsl.com'
@@ -137,10 +137,10 @@ async def record_and_transcribe(mqtt_client):
                 filename,
                 word_timestamps=True,
                 vad_filter=True,
-                vad_parameters=dict(
-                    min_silence_duration_ms=500,
-                    speech_pad_ms=400
-                )
+                # vad_parameters=dict(
+                #     min_silence_duration_ms=500,
+                #     speech_pad_ms=400
+                # )
             )
             
             message = ""
@@ -206,7 +206,7 @@ async def main():
     try:
         # Run both tasks concurrently
         await asyncio.gather(
-            process_video(mqtt_client),
+            # process_video(mqtt_client),
             record_and_transcribe(mqtt_client)
         )
     except KeyboardInterrupt:
