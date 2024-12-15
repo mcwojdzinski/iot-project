@@ -6,7 +6,7 @@
 2. Mateusz Cwojdziński, 28927
 
 ## Główna dokumentacja
-* [Arduino]() - Dokumentacja dla arduino
+* [Arduino](https://github.com/mcwojdzinski/iot-project/blob/main/fullintegration-arduino.md) - Dokumentacja dla arduino
 * [Python](https://github.com/mcwojdzinski/iot-project/blob/main/fullintegration-python.md) - Dokumentacja dla python'a
 
 ## Dokumentacja dla poszczególnych programów:
