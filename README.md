@@ -7,7 +7,7 @@
 
 ## Główna dokumentacja
 * [Arduino]() - Dokumentacja dla arduino
-* [Python]() - Dokumentacja dla python'a
+* [Python](https://github.com/mcwojdzinski/iot-project/blob/main/fullintegration-python.md) - Dokumentacja dla python'a
 
 ## Dokumentacja dla poszczególnych programów:
 
