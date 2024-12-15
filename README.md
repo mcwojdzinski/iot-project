@@ -5,7 +5,11 @@
 1. Bogusz Krzyżanowski, 28667
 2. Mateusz Cwojdziński, 28927
 
-## Dokumentacja programów
+## Główna dokumentacja
+* [Arduino]() - Dokumentacja dla arduino
+* [Python]() - Dokumentacja dla python'a
+
+## Dokumentacja dla poszczególnych programów:
 
 ### ESP8266
 
