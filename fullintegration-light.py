@@ -64,8 +64,7 @@ def on_message(client, userdata, msg):
             
             temperature = dataset['temperature']
             humidity = dataset['humidity']
-            int("hello")
-            #force error
+
             influx_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
             point = Point("temperature") \
                 .tag("location", "cdv") \
