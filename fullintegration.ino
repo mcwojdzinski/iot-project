@@ -105,6 +105,13 @@ void connectToMQTT();
 void syncTime();
 void mqttCallback(char *topic, byte *payload, unsigned int length);
 
+// Add these variables at the top with other global variables
+int voice_scroll_position = 0;
+int video_scroll_position = 0;
+unsigned long last_scroll = 0;
+const int SCROLL_DELAY = 300;  // Scroll speed in milliseconds
+const int SCROLL_HOP = 2;
+
 void setup() {
   Serial.begin(9600);
   sensors.begin();
@@ -180,13 +187,12 @@ void mqttCallback(char *topic, byte *payload, unsigned int length) {
     }
 
 
-    lcd.clear();
-    lcd.setCursor(0,0);
-
     if (String(topic) == voice_topic) {
-      voice_text = message;
+        voice_text = message;
+        voice_scroll_position = 0;  // Reset scroll position for new message
     } else if (String(topic) == video_topic) {
-      video_text = message;
+        video_text = message;
+        video_scroll_position = 0;  // Reset scroll position for new message
     }
 }
 
@@ -218,10 +224,60 @@ void loop() {
 
 
 
+  // Current time
+  unsigned long current_time = millis();
+  
+  // Clear display and update both lines
   lcd.clear();
+  
+  // First line: voice text (scrolling if longer than 16 chars)
   lcd.setCursor(0,0);
-  lcd.print(voice_text);
+  if(voice_text.length() > 16) {
+      // Calculate the portion of text to display
+      String voice_display = voice_text.substring(voice_scroll_position);
+      if(voice_display.length() > 16) {
+          voice_display = voice_display.substring(0, 16);
+      }
+      lcd.print(voice_display);
+      
+      // Update scroll position if enough time has passed
+      if(current_time - last_scroll >= SCROLL_DELAY) {
+          voice_scroll_position+=SCROLL_HOP;
+          // Reset position when we reach the end
+          if(voice_scroll_position >= voice_text.length()) {
+              voice_scroll_position = 0;
+          }
+      }
+  } else {
+      lcd.print(voice_text);
+  }
+  
+  // Second line: video text (scrolling if longer than 16 chars)
   lcd.setCursor(0,1);
-  lcd.print(video_text);
-  delay(1000);
+  if(video_text.length() > 16) {
+      // Calculate the portion of text to display
+      String video_display = video_text.substring(video_scroll_position);
+      if(video_display.length() > 16) {
+          video_display = video_display.substring(0, 16);
+      }
+      lcd.print(video_display);
+      
+      // Update scroll position if enough time has passed
+      if(current_time - last_scroll >= SCROLL_DELAY) {
+          video_scroll_position+=SCROLL_HOP;
+          // Reset position when we reach the end
+          if(video_scroll_position >= video_text.length()) {
+              video_scroll_position = 0;
+          }
+      }
+  } else {
+      lcd.print(video_text);
+  }
+  
+  // Update last scroll time
+  if(current_time - last_scroll >= SCROLL_DELAY) {
+      last_scroll = current_time;
+  }
+  
+  delay(50);  // Small delay to prevent display flickering
 }
