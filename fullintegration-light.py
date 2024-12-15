@@ -19,7 +19,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 SAMPLE_RATE = 48000
 CHANNELS = 1
 chunk_duration = 5
-FRAME_INTERVAL = 1
+FRAME_INTERVAL = 0.5
 
 # MQTT Configuration
 broker = 's3463711.ala.eu-central-1.emqxsl.com'
@@ -74,7 +74,6 @@ def on_message(client, userdata, msg):
             write_api = influx_client.write_api(write_options=SYNCHRONOUS)
             write_api.write(bucket=INFLUX_BUCKET, record=point)
             influx_client.close()
-
             print("Data saved to InfluxDB")
             
     except Exception as e:
